@@ -1,0 +1,6 @@
+.venv/
+.quarto/
+index_files/
+index.html
+__pycache__/
+*.pyc
