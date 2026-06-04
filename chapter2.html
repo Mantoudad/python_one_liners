@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction – Python One Liners Learning Notes</title>
+<title>Python Tricks – Python One Liners Learning Notes</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,41 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -141,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter2.html">Python Tricks</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -158,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -176,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Python Tricks</span></a>
   </div>
 </li>
@@ -221,23 +186,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#about-this-notes" id="toc-about-this-notes" class="nav-link active" data-scroll-target="#about-this-notes">About this notes</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
-  <li><a href="#conclude-with-the-zen-of-python" id="toc-conclude-with-the-zen-of-python" class="nav-link" data-scroll-target="#conclude-with-the-zen-of-python">Conclude with the Zen of Python</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title">Python Tricks</h1>
 </div>
 
 
@@ -254,68 +211,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="about-this-notes" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-notes">About this notes</h2>
-<p>This notes is about self learning progress of book “Python One-Liners” by Chirstian Mayer. Each one-liner example will include the original syntax, one-liner syntax, and my understanding of the one-liner syntax.</p>
-</section>
-<section id="example" class="level2">
-<h2 class="anchored" data-anchor-id="example">Example</h2>
-<div id="a8e056b1" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="kw">lambda</span> l:q([x <span class="cf">for</span> x <span class="kw">in</span> l[<span class="dv">1</span>:] <span class="cf">if</span> x <span class="op">&lt;=</span> l[<span class="dv">0</span>]]) <span class="op">+</span> [l[<span class="dv">0</span>]] <span class="op">+</span> q([x <span class="cf">for</span> x <span class="kw">in</span> l <span class="cf">if</span> x <span class="op">&gt;</span> l[<span class="dv">0</span>]]) <span class="cf">if</span> l <span class="cf">else</span> []</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>This is the first one-liner example in the book, which is a quick implementation of the quick sort algorithm. The original syntax is as follows:</p>
-<div id="912a1502" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> q(l):</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> l:</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> q([x <span class="cf">for</span> x <span class="kw">in</span> l[<span class="dv">1</span>:] <span class="cf">if</span> x <span class="op">&lt;=</span> l[<span class="dv">0</span>]]) <span class="op">+</span> [l[<span class="dv">0</span>]] <span class="op">+</span> q([x <span class="cf">for</span> x <span class="kw">in</span> l <span class="cf">if</span> x <span class="op">&gt;</span> l[<span class="dv">0</span>]])</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>The one-liner syntax uses a lambda function to define the function <code>q</code>, and uses a conditional expression to replace the if-else statement. The list comprehensions are used to create the two sublists for the recursive calls. The one-liner syntax is more concise and can be easier to read once you are familiar with the syntax, but it may be less clear for those who are new to Python or functional programming concepts.</p>
-<p>Another example is using list comprehension to reduct the creation of lists into a signle line of code.</p>
-<div id="35df2a68" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># BEFORE</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> []</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    squares.append(i<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
-</div>
-</div>
-<div id="169f20d9" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># AFTER</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
-</div>
-</div>
-<p>In this example, the original code creates an empty list <code>squares</code>, then uses a for loop to iterate through the numbers from 0 to 9, appending the square of each number to the list. The one-liner syntax uses a list comprehension to achieve the same result in a single line of code. The list comprehension iterates through the numbers from 0 to 9, computes the square of each number, and constructs a new list with those values, which is then printed. This approach is more concise and can be more efficient than using a for loop and appending to a list.</p>
-</section>
-<section id="conclude-with-the-zen-of-python" class="level2">
-<h2 class="anchored" data-anchor-id="conclude-with-the-zen-of-python">Conclude with the Zen of Python</h2>
-<p>The Zen of Python is a collection of guiding principles for writing computer programs in the Python language. It was written by Tim Peters and is included as an Easter egg in the Python interpreter. The Zen of Python emphasizes readability, simplicity, and the importance of explicitness in code. Some of the key principles include:<br>
-- Beautiful is better than ugly.<br>
-- Explicit is better than implicit.<br>
-- Simple is better than complex.<br>
-- Complex is better than complicated.<br>
-- Readability counts.<br>
-- Special cases aren’t special enough to break the rules.<br>
-- Although practicality beats purity.<br>
-- Errors should never pass silently.<br>
-- In the face of ambiguity, refuse the temptation to guess.<br>
-- There should be one– and preferably only one –obvious way to do it.<br>
-- Although that way may not be obvious at first unless you’re Dutch.<br>
-- Now is better than never.<br>
-- Although never is often better than <em>right</em> now.<br>
-- If the implementation is hard to explain, it’s a bad idea.<br>
-- If the implementation is easy to explain, it may be a good idea.<br>
-- Namespaces are one honking great idea – let’s do more of those!</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

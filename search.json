@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "This notes is about self learning progress of book “Python One-Liners” by Chirstian Mayer. Each one-liner example will include the original syntax, one-liner syntax, and my understanding of the one-liner syntax.",
+    "crumbs": [
+      "Home",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "index.html#about-this-notes",
+    "href": "index.html#about-this-notes",
+    "title": "Introduction",
+    "section": "",
+    "text": "This notes is about self learning progress of book “Python One-Liners” by Chirstian Mayer. Each one-liner example will include the original syntax, one-liner syntax, and my understanding of the one-liner syntax.",
+    "crumbs": [
+      "Home",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "index.html#example",
+    "href": "index.html#example",
+    "title": "Introduction",
+    "section": "Example",
+    "text": "Example\n\nq = lambda l:q([x for x in l[1:] if x &lt;= l[0]]) + [l[0]] + q([x for x in l if x &gt; l[0]]) if l else []\n\nThis is the first one-liner example in the book, which is a quick implementation of the quick sort algorithm. The original syntax is as follows:\n\ndef q(l):\n    if l:\n        return q([x for x in l[1:] if x &lt;= l[0]]) + [l[0]] + q([x for x in l if x &gt; l[0]])\n    else:\n        return []\n\nThe one-liner syntax uses a lambda function to define the function q, and uses a conditional expression to replace the if-else statement. The list comprehensions are used to create the two sublists for the recursive calls. The one-liner syntax is more concise and can be easier to read once you are familiar with the syntax, but it may be less clear for those who are new to Python or functional programming concepts.\nAnother example is using list comprehension to reduct the creation of lists into a signle line of code.\n\n# BEFORE\nsquares = []\n\nfor i in range(10):\n    squares.append(i**2)\n\nprint(squares)\n\n[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n\n\n# AFTER\nprint([i**2 for i in range(10)])\n\n[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n\nIn this example, the original code creates an empty list squares, then uses a for loop to iterate through the numbers from 0 to 9, appending the square of each number to the list. The one-liner syntax uses a list comprehension to achieve the same result in a single line of code. The list comprehension iterates through the numbers from 0 to 9, computes the square of each number, and constructs a new list with those values, which is then printed. This approach is more concise and can be more efficient than using a for loop and appending to a list.",
+    "crumbs": [
+      "Home",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "index.html#conclude-with-the-zen-of-python",
+    "href": "index.html#conclude-with-the-zen-of-python",
+    "title": "Introduction",
+    "section": "Conclude with the Zen of Python",
+    "text": "Conclude with the Zen of Python\nThe Zen of Python is a collection of guiding principles for writing computer programs in the Python language. It was written by Tim Peters and is included as an Easter egg in the Python interpreter. The Zen of Python emphasizes readability, simplicity, and the importance of explicitness in code. Some of the key principles include:\n- Beautiful is better than ugly.\n- Explicit is better than implicit.\n- Simple is better than complex.\n- Complex is better than complicated.\n- Readability counts.\n- Special cases aren’t special enough to break the rules.\n- Although practicality beats purity.\n- Errors should never pass silently.\n- In the face of ambiguity, refuse the temptation to guess.\n- There should be one– and preferably only one –obvious way to do it.\n- Although that way may not be obvious at first unless you’re Dutch.\n- Now is better than never.\n- Although never is often better than right now.\n- If the implementation is hard to explain, it’s a bad idea.\n- If the implementation is easy to explain, it may be a good idea.\n- Namespaces are one honking great idea – let’s do more of those!",
+    "crumbs": [
+      "Home",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "chapter1.html",
+    "href": "chapter1.html",
+    "title": "Python Refresher",
+    "section": "",
+    "text": "This chapter serves as a refresher for Python programming, covering basic syntax, data structures, control flow, functions, and definition of Lambdas.",
+    "crumbs": [
+      "Home",
+      "Python Refresher"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#introduction",
+    "href": "chapter1.html#introduction",
+    "title": "Python Refresher",
+    "section": "",
+    "text": "This chapter serves as a refresher for Python programming, covering basic syntax, data structures, control flow, functions, and definition of Lambdas.",
+    "crumbs": [
+      "Home",
+      "Python Refresher"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#numerical-data-types-and-structures",
+    "href": "chapter1.html#numerical-data-types-and-structures",
+    "title": "Python Refresher",
+    "section": "Numerical Data Types and Structures",
+    "text": "Numerical Data Types and Structures\nThe two most important numerical data types in Python are int and float. The int type represents whole numbers, while the float type represents decimal numbers. Python offers a wide range of built-in numerical operations, including addition, subtraction, multiplication, division, and more complex operations like exponentiation and modulus.\n\n# Arithmetic Operations\na, b = 10, 3\nprint(a + b)  # Addition\nprint(a - b)  # Subtraction\nprint(a * b)  # Multiplication\nprint(a / b)  # Division\nprint(a // b) # Floor Division\nprint(a % b)  # Modulus\nprint(-a)     # Negation\nprint(abs(-a))  # Absolute Value\nprint(int(3.7))  # Type Conversion to Integer\nprint(float(a))  # Type Conversion to Float\nprint(a ** b)  # Exponentiation\n\n13\n7\n30\n3.3333333333333335\n3\n1\n-10\n10\n3\n10.0\n1000",
+    "crumbs": [
+      "Home",
+      "Python Refresher"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#boolean-and-keywords-and-or-not",
+    "href": "chapter1.html#boolean-and-keywords-and-or-not",
+    "title": "Python Refresher",
+    "section": "Boolean and Keywords: and, or, not",
+    "text": "Boolean and Keywords: and, or, not\nThe bool type in Python represents Boolean values, which can be either True or False. In python, Boolean and Integer data types are closely related, with True being equivalent to 1 and False being equivalent to 0. This means that you can perform arithmetic operations with Boolean values, and they will be treated as integers in those operations. For example, True + True will evaluate to 2, and False + True will evaluate to 1. This relationship allows for a seamless integration of Boolean logic with numerical computations in Python. The and, or, and not keywords are used to perform logical operations on Boolean values. The and operator returns True if both operands are True, the or operator returns True if at least one operand is True, and the not operator returns the opposite of the operand’s Boolean value.\n\nx = 1 &gt; 2  # Comparison operator, evaluates to False\nprint(x)  # Output: False\n\n# Logical Operations\nx, y = True, False\nprint(x and y)  # Logical AND\nprint(x or y)   # Logical OR\nprint(not x)    # Logical NOT\n\nprint((x or y) == True)\nprint((x and y) == False)\nprint((not x) == False)\n\nFalse\nFalse\nTrue\nFalse\nTrue\nTrue\nTrue\n\n\nThe order of boolean operations in Python follows the standard precedence rules, which are as follows:\n1. Parentheses ()\n2. not\n3. and\n4. or\nwhich means that not is evaluated before and, and and is evaluated before or. This order of operations ensures that logical expressions are evaluated correctly according to their intended meaning. For example, in the expression True or False and False, the and operation will be evaluated first, resulting in True or False, which then evaluates to True.\n\n## Boolean Operations\nx, y, z = True, False, True\nprint(x and y or z)  # Evaluates to True\nprint(x or y and z)  # Evaluates to True\nprint(not x or y)  # Evaluates to False\n\n## if condition evaluates to false, the else block will be executed\nif None or 0 or 0.0 or '' or [] or {} or set() or False:\n    print(\"This will not be printed.\") # Not reached\nelse:\n    print(\"This will be printed because all the values are falsy.\")\n\nTrue\nTrue\nFalse\nThis will be printed because all the values are falsy.",
+    "crumbs": [
+      "Home",
+      "Python Refresher"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#strings",
+    "href": "chapter1.html#strings",
+    "title": "Python Refresher",
+    "section": "Strings",
+    "text": "Strings\nStrings in Python are immutable sequences of characters and so they cannot be changed after they are created. They can be defined using single quotes ('...'), double quotes (\"...\"), or triple quotes ('''...''' or \"\"\"...\"\"\"). Triple quotes are often used for multi-line strings. Python provides a wide range of string operations, including concatenation, slicing, and various string methods for manipulation and formatting.\n\n## The string method\nstr(5) == '5' # is True\nstr(5) == 5 # is False\n## Concatenation\npython = 'Py' + 'thon'\nprint(python)  # Output: Python\n\nPython\n\n\nThe most frequently used whitespace characters in python are:\n- the newline character \\n, which represents a line break, - the space character \\s, which represents a single space, - the tab character \\t, which represents a horizontal tab. These whitespace characters are often used in string manipulation and formatting to control the layout and appearance of text. For example, you can use \\n to create multi-line strings, \\s to add spaces between words, and \\t to align text in a tabular format.\n\n## Most Important String Methods\na = \"       This is a string\\t\\n      \"\nprint(a.strip())  # Removes leading and trailing whitespace\n\nprint(\"Dr.Smith\".lower()) # Converts to lowercase\n\nprint(\"help\".upper()) # Converts to uppercase\n\nprint(\"hello world\".startswith(\"hello\")) # Checks if string starts with \"hello\", returns True\n\nprint(\"hello world\".endswith(\"world\")) # Checks if string ends with \"world\", returns True\n\nprint(\"hello world\".find(\"world\")) # Finds the index of the first occurrence of \"world\", returns 6\n\nprint(\"hello world\".replace(\"world\", \"Python\")) # Replaces all occurrences of \"world\" with \"Python\", returns \"hello Python\"\n\nprint(\",\".join([\"apple\", \"banana\", \"cherry\"])) # Joins the list of strings with a comma, returns \"apple,banana,cherry\"\n\nprint(len(\"hello world\")) # Returns the length of the string, which is 11\n\nprint(\"hello\" in \"hello world\") # Checks if \"hello\" is a substring of \"hello world\", returns True\nprint(\"world\" not in \"hello world\") # Checks if \"world\" is not a substring of \"hello world\", returns False\n\nThis is a string\ndr.smith\nHELP\nTrue\nTrue\n6\nhello Python\napple,banana,cherry\n11\nTrue\nFalse",
+    "crumbs": [
+      "Home",
+      "Python Refresher"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#the-keyword-none",
+    "href": "chapter1.html#the-keyword-none",
+    "title": "Python Refresher",
+    "section": "The keyword “None”",
+    "text": "The keyword “None”\nThe keyword None in Python represents the absence of a value. It’s similar to null in other programming languages. None is often used to indicate that a variable has no value or that a function does not return anything. It is important to note that None is a singleton object, which means that there is only one instance of None in the entire Python runtime. This allows for efficient memory usage and makes it easy to check for the presence of None using identity comparison (is None) rather than equality comparison (== None). None is the only value of the NoneType data type, and it is commonly used in various contexts, such as default function arguments, return values for functions that do not explicitly return anything, and as a placeholder for optional values.\n\ndef example_function():\n    x = 5\n    # This function does not return anything, so it implicitly returns None\n\nprint(example_function() is None)  # Output: True, the keyword `is` will be introduced next.\nprint(\"\" == None) # is False, because an empty string is not equal to None.\nprint(0 == None) # is False, because None is not equal to any other value, including itself.\n\nTrue\nFalse\nFalse",
+    "crumbs": [
+      "Home",
+      "Python Refresher"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#container-data-structures",
+    "href": "chapter1.html#container-data-structures",
+    "title": "Python Refresher",
+    "section": "Container Data Structures",
+    "text": "Container Data Structures\n\nLists\nUnlike strings, lists in Python are mutable, you can modify their contents at runtime.\n\nlst = [1, 2, 3, 4, 4]\nprint(len(lst))  # Output: 5\nprint(lst[0])  # Output: 1\nprint(lst[-1])  # Output: 4\n\n5\n1\n4\n\n\n\nThe keyword “is”\nThe keyword is in Python is used for checking whether two variables refer to the same object in memory. It is different from the == operator, which checks for value equality. When you use is, you are checking if both operands point to the same object, while == checks if the values of the operands are equal, regardless of whether they are the same object or not. For example, two different lists with the same contents will be considered equal with ==, but they will not be the same object in memory, so is will return False.\n\na = b = 3\nprint(a is b) # True\n\nprint([3] is [3]) # False, because they are different objects in memory\n\nTrue\nFalse\n\n\n\n\nThree ways to add elements to a list\n\n# 1. Append \nlst.append(5)\nprint(lst)  # Output: [1, 2, 3, 4, 4, 5]\n\n# 2. Insert\nlst.insert(2, 10)  # Inserts 10 at index 2\nprint(lst)  # Output: [1, 2, 10, 3, 4, 4, 5]\n\n# 3. List Concatenation\nlst = lst + [6, 7]  # Concatenates the list with another list\nprint(lst)  # Output: [1, 2, 10, 3, 4, 4, 5, 6, 7]\n\n[1, 2, 3, 4, 4, 5]\n[1, 2, 10, 3, 4, 4, 5]\n[1, 2, 10, 3, 4, 4, 5, 6, 7]\n\n\n\n\nThree ways to remove elements from a list\n\n# 1. Remove by value\nlst.remove(10)  # Removes the first occurrence of 10\nprint(lst)  # Output: [1, 2, 3, 4, 4, 5, 6, 7]\n# 2. Remove by index\ndel lst[2]  # Removes the element at index 2\nprint(lst)  # Output: [1, 2, 4, 4, 5, 6, 7]\n# 3. Pop\npopped_element = lst.pop(3)  # Removes and returns the element at index 3\nprint(popped_element)  # Output: 4\nprint(lst)  # Output: [1, 2, 4, 5, 6, 7]\n\n[1, 2, 3, 4, 4, 5, 6, 7]\n[1, 2, 4, 4, 5, 6, 7]\n4\n[1, 2, 4, 5, 6, 7]\n\n\n\n\nReversing Lists\nReversing a list modifies the original list in place and does not create a new List object, which means it does not return anything.\n\nlst = [1, 2, 3, 4, 5]\nlst.reverse()\nprint(lst)  # Output: [5, 4, 3, 2, 1]\n\n[5, 4, 3, 2, 1]\n\n\n\n\nSorting Lists\nSorting a list modifies the original list in place and does not create a new List object, which means it does not return anything. The result of the sorting operation is in ascending order by default, but you can specify the reverse=True argument to sort in descending order.\n\nlst = [3, 1, 4, 1, 5]\nlst.sort()\nprint(lst)  # Output: [1, 1, 3, 4, 5]\nlst.sort(reverse=True)\nprint(lst)  # Output: [5, 4, 3, 1, 1]\n\n[1, 1, 3, 4, 5]\n[5, 4, 3, 1, 1]\n\n\n\n\nIndexing and Slicing Lists\n\nlst = [1, 3, 3, 3, 5]\nprint(lst.index(3))  # Output: 2, returns the index of the first occurrence of 3\nprint(lst.index(3,2))  # Output: 2, starts searching for 3 from index 2\nprint(lst.index(3,1,4))  # Output: 2, starts searching for 3 from index 1 to index 4 (exclusive)\nprint(lst[1:4])  # Output: [3, 3, 3], returns a new list containing elements from index 1 to index 4 (exclusive)\n\n1\n2\n1\n[3, 3, 3]\n\n\n\n\n\nStacks\nA stack is a data structure that follows the Last In, First Out (LIFO) principle. In Python, you can implement a stack using a list. The append() method is used to add elements to the top of the stack, and the pop() method is used to remove elements from the top of the stack.\n\nstack = [5]\nstack.append(10)  # Push 10 onto the stack, stack becomes [5, 10]\nstack.append(15)  # Push 15 onto the stack, stack becomes [5, 10, 15]\nstack.pop()  # Pop the top element (15) from the stack, stack becomes [5, 10]\nstack.pop()  # Pop the top element (10) from the stack, stack becomes [5]\nprint(stack)  # Output: [5]\n\n[5]\n\n\n\n\nQueues\nA queue is a data structure that follows the First In, First Out (FIFO) principle. In Python, you can implement a queue using a list, but it is more efficient to use the collections.deque class from the collections module, which provides an optimized way to append and pop elements from both ends of the queue.\n\nfrom collections import deque\nqueue = deque([5])\nqueue.append(10)  # Enqueue 10, queue becomes deque([5, 10])\nqueue.append(15)  # Enqueue 15, queue becomes deque([5, 10, 15])\nqueue.popleft()  # Dequeue the front element (5), queue becomes deque([10, 15])\nqueue.popleft()  # Dequeue the front element (10), queue becomes deque([15])\nprint(queue)  # Output: deque([15])\n\ndeque([15])\n\n\n\n\nSets\nA set is an unordered collection of unique elements. In Python, you can create a set using curly braces {} or the set() constructor. Sets are useful for performing mathematical operations like union, intersection, and difference.\n\ns = {1, 2, 3, 4, 4}\nprint(s)  # Output: {1, 2, 3, 4}\n\n{1, 2, 3, 4}\n\n\n\nCollections of Sets\nA set is a collection of unique elements. All data types in set must be hashable, which means all elements in a set must be immutable. Therefore, you cannot have a set of sets, because sets are mutable and cannot be hashed. However, you can have a set of frozensets, which are immutable and hashable.\n\nname = \"Alice\"\nprint(hash(name))  # Output: A unique hash value for the string \"Alice\"\n\n# Can we create a set of strings?\ncharacters = {\"Alice\", \"Bob\", \"Charlie\"}\nprint(characters)  # Output: {'Alice', 'Bob', 'Charlie'}\n\n# Can we create a set of lists?\ntry:\n    list_set = { [1, 2], [3, 4] }  # This will raise a TypeError because lists are unhashable or mutable\nexcept TypeError as e:\n    print(e)  # Output: unhashable type: 'list'\n\n-921239051504824983\n{'Alice', 'Bob', 'Charlie'}\nunhashable type: 'list'\n\n\n\n\nUnordered Nature of Sets\nUnlike lists, elements in a set do not have a specific order. Regardless of the order in which you add elements into a set, you can never be sure in which order the set will store them.\n\ncharacters = {\"Alice\", \"Bob\", \"Charlie\"}\nprint(characters)  # Output: The order of elements may vary each time you run the code\n\n{'Alice', 'Bob', 'Charlie'}\n\n\n\n\n\nDictionaries\nA dictionary is a collection of key-value pairs, where each key is unique and maps to a corresponding value. In Python, you can create a dictionary using curly braces {} with key-value pairs separated by colons :, or by using the dict() constructor.\n\nperson = {\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"city\": \"New York\"\n}\ncalories = dict(breakfast=300, lunch=600, dinner=800)\nprint(person[\"name\"])  # Output: Alice\nprint(calories[\"lunch\"] &lt; calories[\"dinner\"])  # Output: True\ncalories[\"breakfast\"] = 350  # Update the value for the key \"breakfast\"\n\nAlice\nTrue\n\n\nUse the keys() and values() methods to access the keys and values of a dictionary, respectively.\n\nprint('name' in person.keys())  # Output: True, checks if 'name' is a key in the dictionary\nprint('Alice' in person.values())  # Output: True, checks if 'Alice' is a value in the dictionary\n\nTrue\nTrue\n\n\nAccess the key value pairs of a dictionary using the items() method, which returns a view object containing tuples of key-value pairs.\n\nfor key, value in person.items():\n    print(f\"{key}: {value}\")\n\nname: Alice\nage: 30\ncity: New York\n\n\n\n\nMembership\nMembership operators in and not in are used to check if a value is present in a sequence (like a list, tuple, or string) or a collection (like a set or dictionary). The in operator returns True if the value is found, while the not in operator returns True if the value is not found.\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(\"banana\" in fruits)  # Output: True, checks if \"banana\" is in the list of fruits\nprint(\"grape\" not in fruits)  # Output: True, checks if \"grape\" is not in the list of fruits\n\nTrue\nTrue\n\n\n\n\nList and Set Comprehensions\nList and set comprehensions are concise ways to create lists and sets in Python. They allow you to generate a new list or set by applying an expression to each item in an iterable, optionally filtering items using a condition.\n\n# List Comprehension\nsquares = [x**2 for x in range(10)]\nprint(squares)  # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n# Set Comprehension\nunique_squares = {x**2 for x in range(10) if x % 2 == 0}  # Only include squares of even numbers\nprint(unique_squares)  # Output: {0, 4, 16, 36, 64}\n\n[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n{0, 64, 4, 36, 16}",
+    "crumbs": [
+      "Home",
+      "Python Refresher"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#control-flow",
+    "href": "chapter1.html#control-flow",
+    "title": "Python Refresher",
+    "section": "Control Flow",
+    "text": "Control Flow\nControl flow statements in Python include if, elif, else, for, and while. These statements allow you to control the execution of your code based on certain conditions or to repeat a block of code multiple times.\n\n# If-elif-else statement\n# x = int(input(\"Enter a number: \"))\n# if x &lt; 0:\n#     print(\"Negative number\")\n# elif x == 0:\n#     print(\"Zero\")\n# else:\n#     print(\"Positive number\")\n\n# For loop\nfor i in range(5):\n    print(i)  # Output: 0, 1, 2, 3, 4\n\n# While loop\ncount = 0\nwhile count &lt; 5:\n    print(count)  # Output: 0, 1, 2, 3, 4\n    count += 1\n\n0\n1\n2\n3\n4\n0\n1\n2\n3\n4\n\n\nThere are two fundamental ways of terminating a loop in Python: break and continue. The break statement is used to exit a loop prematurely when a certain condition is met, while the continue statement is used to skip the current iteration of the loop and move on to the next iteration.\n\n# Using break\nfor i in range(10):\n    if i == 5:\n        break  # Exit the loop when i is 5\n    print(i)  # Output: 0, 1, 2, 3, 4\n\n# Using continue\nfor i in range(10):\n    if i % 2 == 0:\n        continue  # Skip the rest of the loop body for even numbers\n    print(i)  # Output: 1, 3, 5, 7, 9\n\n0\n1\n2\n3\n4\n1\n3\n5\n7\n9",
+    "crumbs": [
+      "Home",
+      "Python Refresher"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#functions",
+    "href": "chapter1.html#functions",
+    "title": "Python Refresher",
+    "section": "Functions",
+    "text": "Functions\nFunctions in Python are defined using the def keyword, followed by the function name and parentheses. Functions can take parameters, which are specified within the parentheses, and they can return a value using the return statement.\n\ndef greet(name):\n    return f\"Hello, {name}!\"\n\nprint(greet(\"Alice\"))  # Output: Hello, Alice!\n\nHello, Alice!",
+    "crumbs": [
+      "Home",
+      "Python Refresher"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#lambdas",
+    "href": "chapter1.html#lambdas",
+    "title": "Python Refresher",
+    "section": "Lambdas",
+    "text": "Lambdas\nLambda functions, also known as anonymous functions, are small, unnamed functions defined using the lambda keyword. They can take any number of arguments but can only have one expression. The expression is evaluated and returned when the lambda function is called.\nlambda : \nA lambda function can have one or multiple arguments, separated by commas. After the colon(:), you can write the return expression, which is evaluated and returned when the lambda function is called.\n\nprint((lambda x: x + 3)(5))  # Output: 8, this lambda function takes one argument x and returns x + 3\nadd = lambda x, y: x + y  # This lambda function takes two arguments x and y and returns their sum\nprint(add(2, 3))  # Output: 5\n\n8\n5",
+    "crumbs": [
+      "Home",
+      "Python Refresher"
+    ]
+  }
+]
