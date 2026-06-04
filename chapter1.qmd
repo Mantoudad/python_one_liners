@@ -1,0 +1,391 @@
+---
+title: "Python Refresher"
+---
+
+## Introduction
+This chapter serves as a refresher for Python programming, covering basic syntax, data structures, control flow, functions, and definition of Lambdas. 
+
+## Numerical Data Types and Structures
+The two most important numerical data types in Python are `int` and `float`. The `int` type represents whole numbers, while the `float` type represents decimal numbers. Python offers a wide range of built-in numerical operations, including addition, subtraction, multiplication, division, and more complex operations like exponentiation and modulus.
+```{python}
+#| echo: true
+# Arithmetic Operations
+a, b = 10, 3
+print(a + b)  # Addition
+print(a - b)  # Subtraction
+print(a * b)  # Multiplication
+print(a / b)  # Division
+print(a // b) # Floor Division
+print(a % b)  # Modulus
+print(-a)     # Negation
+print(abs(-a))  # Absolute Value
+print(int(3.7))  # Type Conversion to Integer
+print(float(a))  # Type Conversion to Float
+print(a ** b)  # Exponentiation
+```
+
+## Boolean and Keywords: and, or, not
+The `bool` type in Python represents Boolean values, which can be either `True` or `False`. In python, Boolean and Integer data types are closely related, with `True` being equivalent to `1` and `False` being equivalent to `0`. This means that you can perform arithmetic operations with Boolean values, and they will be treated as integers in those operations. For example, `True + True` will evaluate to `2`, and `False + True` will evaluate to `1`. This relationship allows for a seamless integration of Boolean logic with numerical computations in Python. The `and`, `or`, and `not` keywords are used to perform logical operations on Boolean values. The `and` operator returns `True` if both operands are `True`, the `or` operator returns `True` if at least one operand is `True`, and the `not` operator returns the opposite of the operand's Boolean value.
+```{python}
+#| echo: true
+
+x = 1 > 2  # Comparison operator, evaluates to False
+print(x)  # Output: False
+
+# Logical Operations
+x, y = True, False
+print(x and y)  # Logical AND
+print(x or y)   # Logical OR
+print(not x)    # Logical NOT
+
+print((x or y) == True)
+print((x and y) == False)
+print((not x) == False)
+```
+The order of boolean operations in Python follows the standard precedence rules, which are as follows:  
+1. Parentheses `()`  
+2. `not`  
+3. `and`  
+4. `or`  
+which means that `not` is evaluated before `and`, and `and` is evaluated before `or`. This order of operations ensures that logical expressions are evaluated correctly according to their intended meaning. For example, in the expression `True or False and False`, the `and` operation will be evaluated first, resulting in `True or False`, which then evaluates to `True`.
+
+```{python}
+## Boolean Operations
+x, y, z = True, False, True
+print(x and y or z)  # Evaluates to True
+print(x or y and z)  # Evaluates to True
+print(not x or y)  # Evaluates to False
+
+## if condition evaluates to false, the else block will be executed
+if None or 0 or 0.0 or '' or [] or {} or set() or False:
+    print("This will not be printed.") # Not reached
+else:
+    print("This will be printed because all the values are falsy.")
+```
+
+## Strings
+Strings in Python are immutable sequences of characters and so they cannot be changed after they are created. They can be defined using single quotes (`'...'`), double quotes (`"..."`), or triple quotes (`'''...'''` or `"""..."""`). Triple quotes are often used for multi-line strings. Python provides a wide range of string operations, including concatenation, slicing, and various string methods for manipulation and formatting.  
+
+```{python}
+#| echo: true
+## The string method
+str(5) == '5' # is True
+str(5) == 5 # is False
+## Concatenation
+python = 'Py' + 'thon'
+print(python)  # Output: Python
+```
+
+The most frequently used whitespace characters in python are:  
+- the newline character `\n`, which represents a line break,
+- the space character `\s`, which represents a single space,
+- the tab character `\t`, which represents a horizontal tab.
+These whitespace characters are often used in string manipulation and formatting to control the layout and appearance of text. For example, you can use `\n` to create multi-line strings, `\s` to add spaces between words, and `\t` to align text in a tabular format.
+
+```{python}
+#| echo: true
+## Most Important String Methods
+a = "       This is a string\t\n      "
+print(a.strip())  # Removes leading and trailing whitespace
+
+print("Dr.Smith".lower()) # Converts to lowercase
+
+print("help".upper()) # Converts to uppercase
+
+print("hello world".startswith("hello")) # Checks if string starts with "hello", returns True
+
+print("hello world".endswith("world")) # Checks if string ends with "world", returns True
+
+print("hello world".find("world")) # Finds the index of the first occurrence of "world", returns 6
+
+print("hello world".replace("world", "Python")) # Replaces all occurrences of "world" with "Python", returns "hello Python"
+
+print(",".join(["apple", "banana", "cherry"])) # Joins the list of strings with a comma, returns "apple,banana,cherry"
+
+print(len("hello world")) # Returns the length of the string, which is 11
+
+print("hello" in "hello world") # Checks if "hello" is a substring of "hello world", returns True
+print("world" not in "hello world") # Checks if "world" is not a substring of "hello world", returns False
+```
+
+## The keyword "None"
+The keyword `None` in Python represents the absence of a value. It's similar to `null` in other programming languages. `None` is often used to indicate that a variable has no value or that a function does not return anything. It is important to note that `None` is a singleton object, which means that there is only one instance of `None` in the entire Python runtime. This allows for efficient memory usage and makes it easy to check for the presence of `None` using identity comparison (`is None`) rather than equality comparison (`== None`). `None` is the only value of the `NoneType` data type, and it is commonly used in various contexts, such as default function arguments, return values for functions that do not explicitly return anything, and as a placeholder for optional values.
+
+```{python}
+#| echo: true
+def example_function():
+    x = 5
+    # This function does not return anything, so it implicitly returns None
+
+print(example_function() is None)  # Output: True, the keyword `is` will be introduced next.
+print("" == None) # is False, because an empty string is not equal to None.
+print(0 == None) # is False, because None is not equal to any other value, including itself.
+```
+
+## Container Data Structures
+### Lists
+Unlike strings, lists in Python are mutable, you can modify their contents at runtime. 
+
+```{python}
+lst = [1, 2, 3, 4, 4]
+print(len(lst))  # Output: 5
+print(lst[0])  # Output: 1
+print(lst[-1])  # Output: 4
+```
+
+#### The keyword "is"
+The keyword `is` in Python is used for checking whether two variables refer to the same object in memory. It is different from the `==` operator, which checks for value equality. When you use `is`, you are checking if both operands point to the same object, while `==` checks if the values of the operands are equal, regardless of whether they are the same object or not. For example, two different lists with the same contents will be considered equal with `==`, but they will not be the same object in memory, so `is` will return `False`.
+
+```{python}
+a = b = 3
+print(a is b) # True
+
+print([3] is [3]) # False, because they are different objects in memory
+```
+
+#### Three ways to add elements to a list
+
+```{python}
+#| echo: true
+# 1. Append 
+lst.append(5)
+print(lst)  # Output: [1, 2, 3, 4, 4, 5]
+
+# 2. Insert
+lst.insert(2, 10)  # Inserts 10 at index 2
+print(lst)  # Output: [1, 2, 10, 3, 4, 4, 5]
+
+# 3. List Concatenation
+lst = lst + [6, 7]  # Concatenates the list with another list
+print(lst)  # Output: [1, 2, 10, 3, 4, 4, 5, 6, 7]
+```
+#### Three ways to remove elements from a list
+
+```{python}
+#| echo: true
+# 1. Remove by value
+lst.remove(10)  # Removes the first occurrence of 10
+print(lst)  # Output: [1, 2, 3, 4, 4, 5, 6, 7]
+# 2. Remove by index
+del lst[2]  # Removes the element at index 2
+print(lst)  # Output: [1, 2, 4, 4, 5, 6, 7]
+# 3. Pop
+popped_element = lst.pop(3)  # Removes and returns the element at index 3
+print(popped_element)  # Output: 4
+print(lst)  # Output: [1, 2, 4, 5, 6, 7]
+```
+
+#### Reversing Lists
+Reversing a list modifies the original list in place and does not create a new List object, which means it does not return anything. 
+
+```{python}
+#| echo: true
+lst = [1, 2, 3, 4, 5]
+lst.reverse()
+print(lst)  # Output: [5, 4, 3, 2, 1]
+```
+
+#### Sorting Lists 
+Sorting a list modifies the original list in place and does not create a new List object, which means it does not return anything. The result of the sorting operation is in ascending order by default, but you can specify the `reverse=True` argument to sort in descending order.
+
+```{python}
+#| echo: true
+lst = [3, 1, 4, 1, 5]
+lst.sort()
+print(lst)  # Output: [1, 1, 3, 4, 5]
+lst.sort(reverse=True)
+print(lst)  # Output: [5, 4, 3, 1, 1]
+```
+
+#### Indexing and Slicing Lists
+
+```{python}
+#| echo: true
+lst = [1, 3, 3, 3, 5]
+print(lst.index(3))  # Output: 2, returns the index of the first occurrence of 3
+print(lst.index(3,2))  # Output: 2, starts searching for 3 from index 2
+print(lst.index(3,1,4))  # Output: 2, starts searching for 3 from index 1 to index 4 (exclusive)
+print(lst[1:4])  # Output: [3, 3, 3], returns a new list containing elements from index 1 to index 4 (exclusive)
+```
+
+### Stacks
+A stack is a data structure that follows the Last In, First Out (LIFO) principle. In Python, you can implement a stack using a list. The `append()` method is used to add elements to the top of the stack, and the `pop()` method is used to remove elements from the top of the stack.
+
+```{python}
+stack = [5]
+stack.append(10)  # Push 10 onto the stack, stack becomes [5, 10]
+stack.append(15)  # Push 15 onto the stack, stack becomes [5, 10, 15]
+stack.pop()  # Pop the top element (15) from the stack, stack becomes [5, 10]
+stack.pop()  # Pop the top element (10) from the stack, stack becomes [5]
+print(stack)  # Output: [5]
+```
+
+### Queues
+A queue is a data structure that follows the First In, First Out (FIFO) principle. In Python, you can implement a queue using a list, but it is more efficient to use the `collections.deque` class from the `collections` module, which provides an optimized way to append and pop elements from both ends of the queue.
+
+```{python}
+from collections import deque
+queue = deque([5])
+queue.append(10)  # Enqueue 10, queue becomes deque([5, 10])
+queue.append(15)  # Enqueue 15, queue becomes deque([5, 10, 15])
+queue.popleft()  # Dequeue the front element (5), queue becomes deque([10, 15])
+queue.popleft()  # Dequeue the front element (10), queue becomes deque([15])
+print(queue)  # Output: deque([15])
+```
+
+### Sets
+A set is an unordered collection of unique elements. In Python, you can create a set using curly braces `{}` or the `set()` constructor. Sets are useful for performing mathematical operations like union, intersection, and difference.
+
+```{python}
+#| echo: true
+s = {1, 2, 3, 4, 4}
+print(s)  # Output: {1, 2, 3, 4}
+```
+
+#### Collections of Sets
+A set is a collection of unique elements. All data types in set must be hashable, which means all elements in a set must be immutable. Therefore, you cannot have a set of sets, because sets are mutable and cannot be hashed. However, you can have a set of frozensets, which are immutable and hashable.
+
+```{python}
+#| echo: true
+name = "Alice"
+print(hash(name))  # Output: A unique hash value for the string "Alice"
+
+# Can we create a set of strings?
+characters = {"Alice", "Bob", "Charlie"}
+print(characters)  # Output: {'Alice', 'Bob', 'Charlie'}
+
+# Can we create a set of lists?
+try:
+    list_set = { [1, 2], [3, 4] }  # This will raise a TypeError because lists are unhashable or mutable
+except TypeError as e:
+    print(e)  # Output: unhashable type: 'list'
+```
+
+#### Unordered Nature of Sets
+Unlike lists, elements in a set do not have a specific order. Regardless of the order in which you add elements into a set, you can never be sure in which order the set will store them. 
+
+```{python}
+#| echo: true
+characters = {"Alice", "Bob", "Charlie"}
+print(characters)  # Output: The order of elements may vary each time you run the code
+```
+
+### Dictionaries
+A dictionary is a collection of key-value pairs, where each key is unique and maps to a corresponding value. In Python, you can create a dictionary using curly braces `{}` with key-value pairs separated by colons `:`, or by using the `dict()` constructor.
+
+```{python}
+#| echo: true
+person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+calories = dict(breakfast=300, lunch=600, dinner=800)
+print(person["name"])  # Output: Alice
+print(calories["lunch"] < calories["dinner"])  # Output: True
+calories["breakfast"] = 350  # Update the value for the key "breakfast"
+```
+
+Use the keys() and values() methods to access the keys and values of a dictionary, respectively.
+
+```{python}
+#| echo: true
+print('name' in person.keys())  # Output: True, checks if 'name' is a key in the dictionary
+print('Alice' in person.values())  # Output: True, checks if 'Alice' is a value in the dictionary
+```
+
+Access the key value pairs of a dictionary using the items() method, which returns a view object containing tuples of key-value pairs.
+
+```{python}
+#| echo: true
+for key, value in person.items():
+    print(f"{key}: {value}")
+```
+
+### Membership
+Membership operators `in` and `not in` are used to check if a value is present in a sequence (like a list, tuple, or string) or a collection (like a set or dictionary). The `in` operator returns `True` if the value is found, while the `not in` operator returns `True` if the value is not found.
+
+```{python}
+#| echo: true
+fruits = ["apple", "banana", "cherry"]
+print("banana" in fruits)  # Output: True, checks if "banana" is in the list of fruits
+print("grape" not in fruits)  # Output: True, checks if "grape" is not in the list of fruits
+```
+
+### List and Set Comprehensions
+List and set comprehensions are concise ways to create lists and sets in Python. They allow you to generate a new list or set by applying an expression to each item in an iterable, optionally filtering items using a condition.
+
+```{python}
+#| echo: true
+# List Comprehension
+squares = [x**2 for x in range(10)]
+print(squares)  # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+# Set Comprehension
+unique_squares = {x**2 for x in range(10) if x % 2 == 0}  # Only include squares of even numbers
+print(unique_squares)  # Output: {0, 4, 16, 36, 64}
+```
+
+## Control Flow
+Control flow statements in Python include `if`, `elif`, `else`, `for`, and `while`. These statements allow you to control the execution of your code based on certain conditions or to repeat a block of code multiple times.
+
+```{python}
+#| echo: true
+# If-elif-else statement
+# x = int(input("Enter a number: "))
+# if x < 0:
+#     print("Negative number")
+# elif x == 0:
+#     print("Zero")
+# else:
+#     print("Positive number")
+
+# For loop
+for i in range(5):
+    print(i)  # Output: 0, 1, 2, 3, 4
+
+# While loop
+count = 0
+while count < 5:
+    print(count)  # Output: 0, 1, 2, 3, 4
+    count += 1
+```
+
+There are two fundamental ways of terminating a loop in Python: `break` and `continue`. The `break` statement is used to exit a loop prematurely when a certain condition is met, while the `continue` statement is used to skip the current iteration of the loop and move on to the next iteration.
+
+```{python}
+#| echo: true
+# Using break
+for i in range(10):
+    if i == 5:
+        break  # Exit the loop when i is 5
+    print(i)  # Output: 0, 1, 2, 3, 4
+
+# Using continue
+for i in range(10):
+    if i % 2 == 0:
+        continue  # Skip the rest of the loop body for even numbers
+    print(i)  # Output: 1, 3, 5, 7, 9
+```
+
+## Functions
+Functions in Python are defined using the `def` keyword, followed by the function name and parentheses. Functions can take parameters, which are specified within the parentheses, and they can return a value using the `return` statement.
+
+```{python}
+#| echo: true
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))  # Output: Hello, Alice!
+```
+
+## Lambdas
+Lambda functions, also known as anonymous functions, are small, unnamed functions defined using the `lambda` keyword. They can take any number of arguments but can only have one expression. The expression is evaluated and returned when the lambda function is called.  
+lambda <arguments>: <return expression>  
+A lambda function can have one or multiple arguments, separated by commas. After the colon(:), you can write the return expression, which is evaluated and returned when the lambda function is called. 
+
+```{python}
+#| echo: true
+print((lambda x: x + 3)(5))  # Output: 8, this lambda function takes one argument x and returns x + 3
+add = lambda x, y: x + y  # This lambda function takes two arguments x and y and returns their sum
+print(add(2, 3))  # Output: 5
+```

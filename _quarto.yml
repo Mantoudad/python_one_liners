@@ -1,5 +1,40 @@
 project:
-  title: "python_one_liners"
+  type: website
+  output-dir: _site
+
+execute:
+  enabled: true
+  freeze: auto
+
+website:
+  title: "Python One Liners Learning Notes"
+  navbar: 
+    left: 
+      - href: index.qmd
+        text: Home
+  sidebar: 
+    style: "docked"
+    contents:
+      - text: "Introduction"
+      - href: index.qmd
+      - text: "Chapter 1"
+      - href: chapter1.qmd
+      - text: "Chapter 2"
+      - href: chapter2.qmd
+      - text: "Chapter 3"
+      - href: chapter3.qmd
+      - text: "Chapter 4"
+      - href: chapter4.qmd
+      - text: "Chapter 5"
+      - href: chapter5.qmd
+      - text: "Chapter 6"
+      - href: chapter6.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
 
 
 

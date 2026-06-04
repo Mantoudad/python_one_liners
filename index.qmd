@@ -1,7 +1,61 @@
 ---
-title: "python_one_liners"
+title: "Introduction"
 ---
 
-## Quarto
+## About this notes
+This notes is about self learning progress of book "Python One-Liners" by Chirstian Mayer. Each one-liner example will include the original syntax, one-liner syntax, and my understanding of the one-liner syntax. 
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Example
+
+```{python}
+#| echo: true
+q = lambda l:q([x for x in l[1:] if x <= l[0]]) + [l[0]] + q([x for x in l if x > l[0]]) if l else []
+```
+This is the first one-liner example in the book, which is a quick implementation of the quick sort algorithm. The original syntax is as follows:
+```{python}
+#| echo: true
+def q(l):
+    if l:
+        return q([x for x in l[1:] if x <= l[0]]) + [l[0]] + q([x for x in l if x > l[0]])
+    else:
+        return []
+```
+The one-liner syntax uses a lambda function to define the function `q`, and uses a conditional expression to replace the if-else statement. The list comprehensions are used to create the two sublists for the recursive calls. The one-liner syntax is more concise and can be easier to read once you are familiar with the syntax, but it may be less clear for those who are new to Python or functional programming concepts.
+
+Another example is using list comprehension to reduct the creation of lists into a signle line of code. 
+```{python}
+#| echo: true
+# BEFORE
+squares = []
+
+for i in range(10):
+    squares.append(i**2)
+
+print(squares)
+```
+
+```{python}
+#| echo: true
+# AFTER
+print([i**2 for i in range(10)])
+```
+In this example, the original code creates an empty list `squares`, then uses a for loop to iterate through the numbers from 0 to 9, appending the square of each number to the list. The one-liner syntax uses a list comprehension to achieve the same result in a single line of code. The list comprehension iterates through the numbers from 0 to 9, computes the square of each number, and constructs a new list with those values, which is then printed. This approach is more concise and can be more efficient than using a for loop and appending to a list.
+
+## Conclude with the Zen of Python
+The Zen of Python is a collection of guiding principles for writing computer programs in the Python language. It was written by Tim Peters and is included as an Easter egg in the Python interpreter. The Zen of Python emphasizes readability, simplicity, and the importance of explicitness in code. Some of the key principles include:  
+- Beautiful is better than ugly.      
+- Explicit is better than implicit.  
+- Simple is better than complex.  
+- Complex is better than complicated.  
+- Readability counts.  
+- Special cases aren't special enough to break the rules.  
+- Although practicality beats purity.  
+- Errors should never pass silently.  
+- In the face of ambiguity, refuse the temptation to guess.  
+- There should be one-- and preferably only one --obvious way to do it.  
+- Although that way may not be obvious at first unless you're Dutch.  
+- Now is better than never.  
+- Although never is often better than *right* now.  
+- If the implementation is hard to explain, it's a bad idea.  
+- If the implementation is easy to explain, it may be a good idea.  
+- Namespaces are one honking great idea -- let's do more of those!  
